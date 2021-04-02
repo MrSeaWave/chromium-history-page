@@ -1,5 +1,6 @@
 {
-  "extends": "standard",
+  "extends": ["standard", "plugin:jest/recommended"],
+  "plugins": ["jest"],
   "rules": {
     "semi": [2, "always"],
     "comma-dangle": [

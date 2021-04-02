@@ -2,25 +2,33 @@
   "name": "chromium-history-page",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "eject": "react-app-rewired eject",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx  ./src",
+    "lint:fix": "npm run lint:js -- --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,css,md}": [
+      "prettier -w",
+      "git add"
+    ],
+    "**/*.{js,ts}": [
+      "npm run lint:fix",
+      "git add"
     ]
   },
   "browserslist": {
@@ -35,13 +43,27 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
   "devDependencies": {
+    "@types/jest": "^26.0.22",
     "customize-cra": "^1.0.0",
     "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
+    "husky": "4.3.8",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "react-app-rewired": "^2.1.8"
   }
