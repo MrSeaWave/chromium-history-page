@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "target": "ES6",
     "module": "es2020",
     "allowSyntheticDefaultImports": true,
