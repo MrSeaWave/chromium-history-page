@@ -1,0 +1,9 @@
+**/*.svg
+**/*.ejs
+**/*.html
+package.json
+/dist
+/es
+/lib
+/coverage
+.cache

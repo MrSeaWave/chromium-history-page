@@ -1,0 +1,17 @@
+{
+  "extends": "standard",
+  "rules": {
+    "semi": [2, "always"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "ignore",
+        "objects": "always-multiline",
+        "imports": "ignore",
+        "exports": "ignore",
+        "functions": "ignore"
+      }
+    ],
+    "no-unused-vars": "off"
+  }
+}
