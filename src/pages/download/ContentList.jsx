@@ -3,6 +3,8 @@ import React from 'react';
 import Select from 'react-select';
 import debounce from 'lodash.debounce';
 import Fuse from 'fuse.js';
+import { List } from 'react-virtualized';
+
 import { DOWNLOAD_URL_BASE, OS_LIST } from '@/constants';
 
 const { useEffect, useState, useCallback } = React;
@@ -18,7 +20,6 @@ function ContentList() {
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
-    console.log('fetch data', selectedOption);
     setFetchStatus('fetching');
     getVerPosOsJson(selectedOption.value).then((resp) => {
       const val = Object.entries(resp.data).map(([v, p]) => {
@@ -42,14 +43,18 @@ function ContentList() {
   // react hook 使用防抖的方式 https://zhuanlan.zhihu.com/p/88799841
   // react class 使用防抖的的方式 https://billqiu.github.io/2017/10/15/how-to-debounce-in-react/
   const sendQuery = (keyword) => {
-    console.log(`keyword for ${keyword}`, verPosList.length);
+    console.log(`keyword for ${keyword}`, keyword.trim(), verPosList.length);
+    if (!keyword.trim()) {
+      setDataList(verPosList);
+      return;
+    }
 
     const searchFuse = new Fuse(verPosList, {
       distance: 1000,
       keys: ['ver', 'pos'],
     });
     const result = searchFuse.search(keyword);
-    setDataList(result);
+    setDataList(result.map((item) => item.item));
   };
 
   const delayedQuery = useCallback(
@@ -63,10 +68,24 @@ function ContentList() {
     delayedQuery(e.target.value);
   };
 
-  console.log('RENDER', fetchStatus);
-  console.log('OS_LIST', selectedOption, OS_LIST);
   const fileName = OS_LIST.find((item) => item.val === selectedOption.value)
     .file;
+
+  function rowRenderer({ key, index, isScrolling, isVisible, style }) {
+    const item = dataList[index];
+    const { ver, href, pos } = item;
+    return (
+      <div key={key} style={style} className='ver-pos-row' data-key={key}>
+        <a target='_blank' href={href}>
+          <span style={{ marginRight: 20, width: 240 }}>version: {ver}</span>
+          <span>position: {pos}</span>
+        </a>
+      </div>
+    );
+  }
+
+  console.log('Fetch Status: ', fetchStatus);
+
   return (
     <div>
       <Select
@@ -85,9 +104,18 @@ function ContentList() {
         style={{ marginTop: 20 }}
         onChange={onChange}
       />
-      <div class='ver-pos-tips'>
+      <div className='ver-pos-tips'>Search Count: {dataList.length}</div>
+      <div className='ver-pos-tips'>
         version (chromium_base_position): {fileName}
       </div>
+      <List
+        className='vir-list-wrapper'
+        width={600}
+        height={600}
+        rowCount={dataList.length}
+        rowHeight={25}
+        rowRenderer={rowRenderer}
+      />
     </div>
   );
 }

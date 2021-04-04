@@ -40,3 +40,17 @@
   color: #aaa;
   margin: 10px 0;
 }
+.vir-list-wrapper {
+  padding: 5px;
+  border: 1px solid #ddd;
+  width: 400px;
+}
+
+.ver-pos-row {
+  position: relative;
+  margin: 2px;
+}
+.ver-pos-row a {
+  display: flex;
+  text-decoration: none;
+}
