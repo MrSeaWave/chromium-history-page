@@ -89,3 +89,6 @@ export const USEFUL_LINKS = [
       'https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html',
   },
 ];
+
+export const DOWNLOAD_URL_BASE =
+  'https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=';

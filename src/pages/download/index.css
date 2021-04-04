@@ -1,3 +1,4 @@
+@import url('./input.css');
 .logo-img {
   width: 100px;
   height: 100px;
@@ -28,4 +29,8 @@
   font-size: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.select-class {
+  width: 400px;
 }

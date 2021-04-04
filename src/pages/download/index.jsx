@@ -4,6 +4,7 @@ import chromeLogo from '@/assets/chrome-logo.svg';
 import chromiumLogo from '@/assets/chromium-logo.svg';
 
 import './index.css';
+import ContentList from './ContentList';
 
 function DownloadPage(props) {
   const { setPage } = props;
@@ -36,7 +37,7 @@ function DownloadPage(props) {
     window.document.documentElement.scrollTop = 0;
   };
   return (
-    <div>
+    <div style={{ marginLeft: 20 }}>
       <div className='header'>
         <div style={{ marginLeft: 15 }}>
           <a target='_blank' href='https://www.google.com/chrome/'>
@@ -55,6 +56,7 @@ function DownloadPage(props) {
       </div>
       <div className='content'>
         <h3>版本:</h3>
+        <ContentList />
       </div>
       <div className='footer'>
         <h3>一些有用的链接:</h3>
