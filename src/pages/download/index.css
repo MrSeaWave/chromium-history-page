@@ -1,3 +1,13 @@
+.logo-img {
+  width: 100px;
+  height: 100px;
+}
+
+.chromium-logo {
+  width: 104px;
+  height: 104px;
+}
+
 .explains .detail {
   font-style: italic;
   color: #888;

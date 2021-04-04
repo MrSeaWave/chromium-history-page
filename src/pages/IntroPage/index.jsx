@@ -56,7 +56,7 @@ class IntroPage extends Component {
       <div className={appClass} style={screenStyle}>
         <section className='container'>
           <h1>Hello!</h1>
-          <h2>Welcome to the history page.</h2>
+          <h2>Welcome to the eggs page.</h2>
           <p>This is a classic website, no traps or weird stuff!</p>
           <p>
             Feel free to browse, relax and, I don't know, click the button down

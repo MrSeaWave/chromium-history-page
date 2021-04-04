@@ -29,17 +29,17 @@ export const EXPLAINS = [
     title: '如何获取 version 与 position 的映射关系',
     steps: [
       {
-        text: '寻找所有的版本version',
+        text: '寻找所有的版本 version',
         href: 'https://chromium.googlesource.com/chromium/src/+refs',
       },
       {
         text:
-          '通过version 获取 position (类似的api https://omahaproxy.appspot.com/)',
+          '通过 version 获取 position (类似的api https://omahaproxy.appspot.com/)',
         href: 'https://omahaproxy.appspot.com/deps.json?version=86.0.4240.63',
       },
       {
         text:
-          '对position 按照 os（例如Mac） 进行分类, 并找出对应的数据是否存在',
+          '对 position 按照 os（例如 Mac ）进行分类, 并找出对应的数据是否存在',
         href:
           'https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/',
       },
