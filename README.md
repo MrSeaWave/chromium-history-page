@@ -2,9 +2,9 @@
 
 ## roadMap
 
-网页：https://mrseawave.github.io/chromium-history-page/
-JSON DATA: https://github.com/MrSeaWave/chromium-history-dataSource
-BASE: https://github.com/MrSeaWave/chromium-history-crawler
+- 网页：https://mrseawave.github.io/chromium-history-page/
+- dataSource(JSON DATA): https://github.com/MrSeaWave/chromium-history-dataSource
+- crawler(BASE): https://github.com/MrSeaWave/chromium-history-crawler
 
 ## development
 
