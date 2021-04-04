@@ -21,6 +21,9 @@ export const OS_LIST = [
 
 export const EXPLAINS = [
   {
+    title: '在这里可以下载 Chrome 的各种历史版本',
+  },
+  {
     title: '可执行文件，像：',
     detail:
       'chrome-mac.zip, chrome-win.zip, chrome-win32.zip, chrome-linux.zip, chrome-android.zip ...',
@@ -71,6 +74,10 @@ export const EXPLAINS = [
         href: 'https://github.com/MrSeaWave/chromium-history-crawler/actions',
       },
     ],
+  },
+  {
+    title: 'PS:',
+    detail: ' 网页中含有彩蛋，请仔细寻找呦~',
   },
 ];
 
