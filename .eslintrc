@@ -17,6 +17,7 @@
         "functions": "ignore"
       }
     ],
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "multiline-ternary": "off"
   }
 }

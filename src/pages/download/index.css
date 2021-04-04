@@ -1,0 +1,21 @@
+.explains .detail {
+  font-style: italic;
+  color: #888;
+}
+
+.go-top {
+  position: fixed;
+  right: 200px;
+  bottom: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(30, 162, 30);
+  color: #fff;
+  min-width: 125px;
+  border-radius: 5px;
+  padding: 0.4rem 0.5rem;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
