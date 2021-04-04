@@ -34,3 +34,9 @@
 .select-class {
   width: 400px;
 }
+
+.ver-pos-tips {
+  font-style: italic;
+  color: #aaa;
+  margin: 10px 0;
+}
